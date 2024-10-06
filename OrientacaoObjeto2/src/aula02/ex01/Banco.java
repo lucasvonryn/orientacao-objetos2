@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 public class Banco {
 
+	@SuppressWarnings("unused")
 	private int cnpj;
+	@SuppressWarnings("unused")
 	private String nomeBanco;
 	private List<ContaBancaria> contasBancarias;
 	
