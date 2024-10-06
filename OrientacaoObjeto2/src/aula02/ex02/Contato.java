@@ -17,10 +17,21 @@ public class Contato {
 		this.dataAniversario = dataAniversario;
 	}
 
-	@Override
-	public String toString() {
-		
-		return "Contato [nome=" + nome + ", sobrenome=" + sobrenome + ", numeroTelefone=" + numeroTelefone
-				+ ", endereco=" + endereco + ", dataAniversario=" + dataAniversario + "]";
+	public String getNome () {
+
+		return this.nome;
+	}
+
+	public void imprimirDados () {
+
+		System.out.println(
+			"--- DADOS ---" +
+			"\nNome: " + this.nome +
+			"\nSobrenome: " + this.sobrenome +
+			"\nNumero de telefone: " + this.numeroTelefone +
+			"\nData de aniversário: " + this.dataAniversario +
+			"\n--- Endereço ---"
+		);
+		this.endereco.imprimirDados();
 	}
 }

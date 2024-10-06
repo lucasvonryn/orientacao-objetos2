@@ -17,9 +17,14 @@ public class Endereco {
 		this.estado = estado;
 	}
 
-	@Override
-	public String toString() {
-		return "Endereco [numero=" + numero + ", rua=" + rua + ", bairro=" + bairro + ", cidade=" + cidade + ", estado="
-				+ estado + "]";
+	public void imprimirDados () {
+
+		System.out.println(
+			"Número: " + this.numero +
+			"\nRua: " + this.rua +
+			"\nBairro: " + this.bairro +
+			"\nCidade: " + this.cidade +
+			"\nEstado: " + this.estado
+		);
 	}
 }
