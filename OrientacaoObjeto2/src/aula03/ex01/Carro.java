@@ -1,4 +1,4 @@
-package aula03;
+package aula03.ex01;
 
 public class Carro extends Veiculo {
 
@@ -11,7 +11,8 @@ public class Carro extends Veiculo {
     }
 
     public void calibrarPneus () {
-
+        
+        System.out.println(this.modelo + " está calibrando os pneus.");
     }
 
     public Integer getNumeroPortas() {

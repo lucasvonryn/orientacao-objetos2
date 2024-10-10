@@ -1,4 +1,4 @@
-package aula03;
+package aula03.ex01;
 
 public class Veiculo {
 
@@ -19,5 +19,6 @@ public class Veiculo {
 
     public void abastecer () {
 
+        System.out.println(this.modelo + " está abastecendo.");
     }
 }
