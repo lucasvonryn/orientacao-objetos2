@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module OrientacaoObjeto2 {
-}
