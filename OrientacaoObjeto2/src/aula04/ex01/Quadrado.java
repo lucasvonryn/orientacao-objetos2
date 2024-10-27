@@ -1,6 +1,6 @@
 package aula04.ex01;
 
-public class Quadrado extends Quadrilatero{
+public class Quadrado extends Quadrilatero {
 
     private Double lado;
 
@@ -13,7 +13,7 @@ public class Quadrado extends Quadrilatero{
     @Override
     public void calcularArea () {
 
-        System.out.println("Área: " + Math.pow(lado, 3));
+        System.out.println("Área: " + Math.pow(lado, 2));
     }
 
     @Override

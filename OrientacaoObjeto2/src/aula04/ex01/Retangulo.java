@@ -14,11 +14,11 @@ public class Retangulo extends Quadrilatero {
     @Override
     public void calcularArea () {
 
-        System.out.println("Área: " + );
+        System.out.println("Área: " + (base * altura));
     }
 
     @Override
     public void calcularPerimetro () {
-
+        System.out.println("Perímetro: " + ((base * 2) + (altura * 2)));
     }
 }
