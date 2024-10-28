@@ -134,10 +134,14 @@ public class Calculadora {
 
             System.out.println(e.getMessage());
 
+        } finally {
+
+            input.close();
+            System.out.println("Executando o bloco finally.");
         }
     }
 
-
+    
     public void calcularRaizQuadrada () {
 
         try {
