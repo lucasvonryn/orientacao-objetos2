@@ -2,7 +2,6 @@ package aula05.ex01;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.math.*;
 
 public class Calculadora {
 
