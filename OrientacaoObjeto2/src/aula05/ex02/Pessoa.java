@@ -1,5 +1,7 @@
 package aula05.ex02;
 
+import java.util.Scanner;
+
 public class Pessoa {
 
     private String nome;
@@ -12,104 +14,40 @@ public class Pessoa {
     private String estado;
     private int cep;
 
-    public String getNome() {
+    Scanner input = new Scanner(System.in);
 
-        return nome;
+    public void informarDados() {
+
+        System.out.println("Informe os dados da pessoa");
+
+        System.out.println("Nome: ");
+        nome = input.nextLine();
+
+        System.out.println("Idade: ");
+        idade = input.nextInt();
+
+        System.out.println("CPF: ");
+        cpf = input.nextLine();
+
+        System.out.println("Logradouro: ");
+        logradouro = input.nextLine();
+
+        System.out.println("Número: ");
+        numero = input.nextInt();
+
+        System.out.println("Bairro: ");
+        bairro = input.nextLine();
+
+        System.out.println("Cidade: ");
+        cidade = input.nextLine();
+
+        System.out.println("Estado: ");
+        estado = input.nextLine();
+
+        System.out.println("CEP: ");
+        cep = input.nextInt();
     }
-
-    public void setNome(String nome) {
-
-        try {
-            
-            this.nome = nome;
-
-        } catch (Exception e) {
-
-            System.err.println(e.getMessage());
-
-        }
-    }
-
-    public int getIdade() {
-
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-
-        this.idade = idade;
-    }
-
-    public String getCpf() {
-
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-
-        this.cpf = cpf;
-    }
-
-    public String getLogradouro() {
-
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-
-        this.logradouro = logradouro;
-    }
-
-    public int getNumero() {
-        
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-
-        this.numero = numero;
-    }
-
-    public String getBairro() {
-
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-
-        this.bairro = bairro;
-    }
-
-    public String getCidade() {
-
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-
-        this.cidade = cidade;
-    }
-
-    public String getEstado() {
-
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-
-        this.estado = estado;
-    }
-
-    public int getCep() {
-
-        return cep;
-    }
-
-    public void setCep(int cep) {
-
-        this.cep = cep;
-    }
-
+    
     @Override
     public String toString() {
         return "Pessoa [nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", logradouro=" + logradouro + ", numero="
