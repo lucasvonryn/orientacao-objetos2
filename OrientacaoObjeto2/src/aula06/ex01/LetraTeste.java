@@ -8,31 +8,31 @@ public class LetraTeste {
 
         Letra letra = new Letra();
         
-        // try {
+        try {
 
-        //     letra.solicitarStrings();
+            letra.solicitarStrings();
 
-        // } catch (InputMismatchException ime) {
+        } catch (InputMismatchException ime) {
 
-        //     System.out.println("Entrada de dados inválida.");
+            System.out.println("Entrada de dados inválida.");
 
-        // } catch (Exception e) {
+        } catch (Exception e) {
 
-        //     System.out.println("Ocorreu uma exceção.");
-        // }
+            System.out.println("Ocorreu uma exceção.");
+        }
 
-        // try {
+        try {
 
-        //     letra.compararStrings();
+            letra.compararStrings();
 
-        // } catch (InputMismatchException ime) {
+        } catch (InputMismatchException ime) {
 
-        //     System.out.println("Entrada de dados inválida.");
+            System.out.println("Entrada de dados inválida.");
 
-        // } catch (Exception e) {
+        } catch (Exception e) {
 
-        //     System.out.println("Ocorreu uma exceção.");
-        // }
+            System.out.println("Ocorreu uma exceção.");
+        }
 
         letra.converterMaiusculo("Teste");
         letra.converterMinusculo("Teste");
