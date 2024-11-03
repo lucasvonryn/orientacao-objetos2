@@ -136,7 +136,7 @@ class CalculadoraServiceTest {
 
 		try {
 
-			double resultado = calc.dividir(10, 0);
+			calc.dividir(10, 0);
 
 			// se o bloco try executou sem disparar exceções, o teste deve falhar
 			fail();
