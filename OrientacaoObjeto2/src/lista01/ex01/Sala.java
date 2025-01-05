@@ -15,4 +15,9 @@ public class Sala {
 
         return capacidadeMax;
     }
+    
+    public int getId() {
+    	
+    	return id;
+    }
 }

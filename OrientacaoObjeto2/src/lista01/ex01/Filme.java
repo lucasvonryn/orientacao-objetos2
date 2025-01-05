@@ -10,4 +10,14 @@ public class Filme {
         this.titulo = titulo;
         this.duracaoMin = duracaoMin;
     }
+    
+    public String getTitulo() {
+    	
+    	return titulo;
+    }
+    
+    public int getDuracao() {
+    	
+    	return duracaoMin;
+    }
 }
