@@ -1,4 +1,4 @@
-package aulas.aula01;
+package aulas.aula01.ex01;
 
 public class Endereco {
 
