@@ -6,16 +6,15 @@ public class Pessoa {
 	public String dataNascimento;
 	public String sexo;
 	public String email;
-	public String estadoCivil;
+	public EstadoCivil estadoCivil;
 	public Endereco endereco;
 	
-	public Pessoa(String nome, String dataNascimento, String sexo, String email, String estadoCivil, Endereco endereco) {
+	public Pessoa(String nome, String dataNascimento, String sexo, String email, Endereco endereco) {
 
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.sexo = sexo;
 		this.email = email;
-		this.estadoCivil = estadoCivil;
 		this.endereco = endereco;
 	}
 	
@@ -32,5 +31,10 @@ public class Pessoa {
 		System.out.println("Bairro: " + endereco.getBairro());
 		System.out.println("Cidade: " + endereco.getCidade());
 		System.out.println("UF: " + endereco.getUf());
+	}
+	
+	public void setEstadoCivil(EstadoCivil estadoCivil) {
+		
+		this.estadoCivil = estadoCivil;
 	}
 }
