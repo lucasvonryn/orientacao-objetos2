@@ -82,10 +82,7 @@ public class Calculadora {
 		
 		Scanner input = new Scanner(System.in);
 		
-		try {
-			
-			System.out.println("Informe o valor de x: ");
-			input.nextLine();
-		}
+		System.out.println("Informe o valor de x: ");
+		input.nextLine();
 	}
 }
