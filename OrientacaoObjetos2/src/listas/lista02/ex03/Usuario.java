@@ -24,6 +24,6 @@ public class Usuario {
 			throw new SenhaInvalidaException();
 		}
 		
-		System.out.println("Loging realizado com sucesso.");
+		System.out.println("Login realizado com sucesso.");
 	}
 }

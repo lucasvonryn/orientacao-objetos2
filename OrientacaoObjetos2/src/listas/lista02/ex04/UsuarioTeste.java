@@ -10,8 +10,11 @@ public class UsuarioTeste {
 			Usuario usuario = new Usuario("Lucas", "123");
 			
 //			usuario.realizarLogin("Ronaldo", "123");
-			usuario.realizarLogin("Lucas", "null");
+//			usuario.realizarLogin("Lucas", "null");
 			usuario.realizarLogin("Lucas", "123");
+			usuario.alterarSenha("Lucas", "123", "LUCAS");
+//			usuario.realizarLogin("Lucas", "123");
+			usuario.realizarLogin("Lucas", "LUCAS");
 			
 		} catch (UsuarioInvalidoException | SenhaInvalidaException e) {
 			
