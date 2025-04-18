@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import org.junit.jupiter.api.Test;
 
-public class BancoDadosTest {
+public class BancoDadosTeste {
 
 	@Test
 	public void conectarTest() throws SQLException, IOException {
