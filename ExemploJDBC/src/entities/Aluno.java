@@ -1,14 +1,13 @@
 package entities;
 
-import java.sql.Date;
-
 public class Aluno {
 
 	private int registroAcademico;
 	private String nome;
 	private String sexo;
 	private Curso curso;
-	private Date dataIngresso;
+	private int codigo_curso;
+	private String dataIngresso;
 	private int periodo;
 	private double coeficiente;
 	
@@ -20,13 +19,15 @@ public class Aluno {
 	public Aluno(int registroAcademico,
 				 String nome,
 				 String sexo,
-				 Date dataIngresso,
+				 int codigo_curso,
+				 String dataIngresso,
 				 int periodo,
 				 double coeficiente) {
 		
 		this.registroAcademico = registroAcademico;
 		this.nome = nome;
 		this.sexo = sexo;
+		this.codigo_curso = codigo_curso;
 		this.dataIngresso = dataIngresso;
 		this.periodo = periodo;
 		this.coeficiente = coeficiente;
@@ -59,16 +60,24 @@ public class Aluno {
 	public Curso getCurso() {
 		return curso;
 	}
-
+	
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
 
-	public Date getDataIngresso() {
+	public int getCodigoCurso() {
+		return codigo_curso;
+	}
+	
+	public void setCodigoCurso(int codigo_curso) {
+		this.codigo_curso = codigo_curso;
+	}
+
+	public String getDataIngresso() {
 		return dataIngresso;
 	}
 
-	public void setDataIngresso(Date dataIngresso) {
+	public void setDataIngresso(String dataIngresso) {
 		this.dataIngresso = dataIngresso;
 	}
 
