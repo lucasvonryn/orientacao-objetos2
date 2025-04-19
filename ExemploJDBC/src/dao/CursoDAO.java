@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import entities.Curso;
@@ -37,22 +39,115 @@ public class CursoDAO {
 		}
 	}
 	
-	public List<Curso> buscarTodos() {
+	public List<Curso> buscarTodos() throws SQLException {
 		
-		return null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			st = conn.prepareStatement("select * from curso order by nome");
+			
+			rs = st.executeQuery();
+			
+			List<Curso> listaCursos = new ArrayList<>();
+			
+			while (rs.next()) {
+				
+				Curso curso = new Curso();
+				
+				curso.setCodigo(rs.getInt("codigo"));
+				curso.setNome(rs.getString("nome"));
+				curso.setPeriodo(rs.getString("periodo"));
+				curso.setDuracao(rs.getInt("duracao"));
+				
+				listaCursos.add(curso);
+			}
+			
+			return listaCursos;
+			
+		} finally {
+			
+			BancoDados.finalizarStatement(st);
+			BancoDados.finalizarResultSet(rs);
+			BancoDados.desconectar();
+		}
 	}
 	
-	public Curso buscarPorCodigo(int codigoCurso) {
+	public Curso buscarPorCodigo(int codigoCurso) throws SQLException {
 		
-		return null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			st = conn.prepareStatement("select * from curso where codigo = ?");
+			
+			st.setInt(1, codigoCurso);
+			
+			rs = st.executeQuery();
+			
+			if (rs.next()) {
+				
+				Curso curso = new Curso();
+				
+				curso.setCodigo(rs.getInt("codigo"));
+				curso.setNome(rs.getString("nome"));
+				curso.setPeriodo(rs.getString("periodo"));
+				curso.setDuracao(rs.getInt("duracao"));
+				
+				return curso;
+			}
+			
+			return null;
+			
+		} finally {
+			
+			BancoDados.finalizarStatement(st);
+			BancoDados.finalizarResultSet(rs);
+			BancoDados.desconectar();
+		}
 	}
 	
-	public void atualizar(Curso curso) {
+	public void atualizar(Curso curso) throws SQLException {
 		
+		PreparedStatement st = null;
+		
+		try {
+			
+			st = conn.prepareStatement("update curso set periodo = ?, duracao = ? where codigo = ?");
+			
+			st.setString(1, curso.getPeriodo());
+			st.setInt(2, curso.getDuracao());
+			st.setInt(3, curso.getCodigo());
+			
+			st.executeUpdate();
+			
+		} finally {
+			
+			BancoDados.finalizarStatement(st);
+			BancoDados.desconectar();
+		}
 	}
 	
-	public int excluir(int codigo) {
+	public int excluir(int codigo) throws SQLException {
 		
-		return 0;
+		PreparedStatement st = null;
+		
+		try {
+			
+			st = conn.prepareStatement("delete from curso where codigo = ?");
+			
+			st.setInt(1, codigo);
+			
+			int linhasManipuladas = st.executeUpdate();
+			
+			return linhasManipuladas;
+			
+		} finally {
+		
+			BancoDados.finalizarStatement(st);
+			BancoDados.desconectar();
+		}
 	}
 }

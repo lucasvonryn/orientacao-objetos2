@@ -1,6 +1,8 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 import entities.Aluno;
@@ -14,7 +16,7 @@ public class AlunoDAO {
 		this.conn = conn;
 	}
 	
-	public void cadastrar(Aluno aluno) {
+	public void cadastrar(Aluno aluno) throws SQLException {
 		
 	}
 	
