@@ -92,8 +92,6 @@ public class CalculadoraServiceTest {
 		
 		try {
 			
-			double resultado = calc.dividir(10.0, 0.0);
-			
 			fail();
 			
 		} catch (ArithmeticException e) {

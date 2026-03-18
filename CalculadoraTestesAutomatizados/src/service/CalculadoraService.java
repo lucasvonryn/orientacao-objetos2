@@ -2,14 +2,10 @@ package service;
 
 public class CalculadoraService {
 
-	private String modelo;
-	private String marca;
 	private boolean status;
 	
 	public CalculadoraService(String modelo, String marca) {
 		
-		this.modelo = modelo;
-		this.marca = marca;
 		this.status = false;
 	}
 	
