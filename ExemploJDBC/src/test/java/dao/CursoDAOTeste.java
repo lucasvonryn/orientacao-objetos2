@@ -82,10 +82,10 @@ public class CursoDAOTeste {
 		try {
 			
 //			CursoDAOTeste.cadastrarCursoTeste();
-//			CursoDAOTeste.buscarTodosCursosTeste();
+			CursoDAOTeste.buscarTodosCursosTeste();
 //			CursoDAOTeste.buscarPorChaveCursoTeste();
 //			CursoDAOTeste.atualizarCursoTeste();
-			CursoDAOTeste.excluirCursoTeste();
+//			CursoDAOTeste.excluirCursoTeste();
 			
 		} catch (SQLException | IOException e) {
 			
