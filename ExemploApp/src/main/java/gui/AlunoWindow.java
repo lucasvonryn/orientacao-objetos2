@@ -20,6 +20,8 @@ import javax.swing.JSeparator;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -81,30 +83,42 @@ public class AlunoWindow extends JFrame {
 	}
 	
 	private void buscarCursos() {
-		List<CursoDTO> listaCursos = this.cursoService.buscarTodos();
 		
-		for (CursoDTO cursoDTO : listaCursos) {
-			this.cbCurso.addItem(cursoDTO);
+		try {
+			
+			List<CursoDTO> listaCursos = this.cursoService.buscarTodos();
+			
+			for (CursoDTO cursoDTO : listaCursos) {
+				this.cbCurso.addItem(cursoDTO);
+			}
+		} catch (SQLException | IOException e) {
+			System.out.println("Erro: " + e.getMessage());
 		}
 	}
 	
 	private void buscarAlunos() {
-		List<AlunoDTO> listaAlunos = this.alunoService.buscarTodos();
-		
-		DefaultTableModel modelo = (DefaultTableModel) tblAlunos.getModel();
-		modelo.fireTableDataChanged();
-		modelo.setRowCount(0);
-		
-		for (AlunoDTO alunoDTO : listaAlunos) {
-			modelo.addRow(new Object[] {
-					alunoDTO.getRegistroAcademico(),
-					alunoDTO.getNome(),
-					alunoDTO.getSexo(),
-					alunoDTO.getCursoDTO().getNome(),
-					alunoDTO.getDataIngresso(),
-					alunoDTO.getPeriodo(),
-					alunoDTO.getCoeficiente()
-			});
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			
+			List<AlunoDTO> listaAlunos = this.alunoService.buscarTodos();
+			
+			DefaultTableModel modelo = (DefaultTableModel) tblAlunos.getModel();
+			modelo.fireTableDataChanged();
+			modelo.setRowCount(0);
+			
+			for (AlunoDTO alunoDTO : listaAlunos) {
+				modelo.addRow(new Object[] {
+						alunoDTO.getRegistroAcademico(),
+						alunoDTO.getNome(),
+						alunoDTO.getSexo(),
+						alunoDTO.getCursoDTO().getNome(),
+						sdf.format(alunoDTO.getDataIngresso()),
+						alunoDTO.getPeriodo(),
+						alunoDTO.getCoeficiente()
+				});
+			}
+		} catch (SQLException | IOException e) {
+			System.out.println("Erro: " + e.getMessage());
 		}
 	}
 	
@@ -329,10 +343,11 @@ public class AlunoWindow extends JFrame {
 			} else {
 				System.out.println("Não foi possível cadastrar um novo aluno.");
 			}
-		} catch (ParseException e) {
+		} catch (SQLException | IOException | ParseException e) {
 			System.err.println(e.getMessage());
 		} finally {
 			this.buscarAlunos();
+			this.limparComponentes();
 		}
 	}
 	
@@ -357,7 +372,7 @@ public class AlunoWindow extends JFrame {
 			} else {
 				System.out.println("Não foi possível atualizar o registro do aluno.");
 			}
-		} catch (ParseException e) {
+		} catch (SQLException | IOException | ParseException e) {
 			System.out.println("Erro: " + e.getMessage());
 		} finally {
 			this.buscarAlunos();
