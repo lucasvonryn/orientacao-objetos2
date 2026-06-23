@@ -1,0 +1,45 @@
+================================================================================
+PASSO 1 - CONFIGURAR O BANCO DE DADOS MYSQL
+================================================================================
+
+1. Inicie o servico MySQL no seu computador.
+2. Execute o script SQL localizado em: ProjetoFinal/sql/schema.sql
+3. O script cria o banco "hoteldb" e as tabelas:
+   - cliente
+   - quarto
+   - reserva
+   - hospedagem
+   - pagamento
+
+================================================================================
+PASSO 2 - CONFIGURAR AS CREDENCIAIS DO BANCO
+================================================================================
+
+1. Abra o arquivo: ProjetoFinal/resources/database.properties
+2. Ajuste usuario, senha e URL conforme seu ambiente:
+
+================================================================================
+PASSO 3 - IMPORTAR O PROJETO NO ECLIPSE
+================================================================================
+
+1. Abra o Eclipse.
+2. Menu: File > Import...
+3. Selecione: Maven > Existing Maven Projects
+4. Em "Root Directory", selecione a pasta ProjetoFinal deste repositorio.
+5. Clique em Finish.
+6. Se solicitado, aguarde o Maven Update Project (download de dependencias).
+
+================================================================================
+PASSO 4 - DEPENDENCIAS EXTRAS (MAVEN)
+================================================================================
+
+O projeto utiliza as seguintes bibliotecas, baixadas automaticamente pelo Maven:
+- mysql-connector-j 8.4.0  (conexao JDBC com MySQL)
+- Apache POI 5.2.5         (exportacao de relatorios em formato .xls)
+
+================================================================================
+PASSO 5 - EXECUTAR A APLICACAO
+================================================================================
+
+1. Navegue ate: src/main/java/gui/MainWindow.java
+2. Clique com o botao direito > Run As > Java Application
